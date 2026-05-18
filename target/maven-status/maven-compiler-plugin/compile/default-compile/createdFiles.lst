@@ -1,0 +1,15 @@
+com\kelompok4\model\AlertStokKritis.class
+com\kelompok4\model\StokMasuk.class
+com\kelompok4\model\Supplier.class
+com\kelompok4\model\Barang.class
+com\kelompok4\model\Departemen.class
+com\kelompok4\model\Elektronik.class
+com\kelompok4\App.class
+com\kelompok4\model\Role.class
+com\kelompok4\model\ATK.class
+com\kelompok4\model\RiwayatStok.class
+com\kelompok4\model\Kategori.class
+com\kelompok4\model\User.class
+app.class
+com\kelompok4\database\Koneksi.class
+com\kelompok4\model\StokKeluar.class
