@@ -26,16 +26,16 @@ public class UserDAO {
     }
 
     // ─── LOGIN: cek NIK dan password, return User atau null ──────────────────
-    public User login(String nik, String password) throws SQLException {
+    public User login(String email, String password) throws SQLException {
         String sql = "SELECT id, nik, nama, email, password, alamat, "
                    + "no_telepon, role "
                    + "FROM users "
-                   + "WHERE nik = ? AND password = ?";
+                   + "WHERE email = ? AND password = ?";
 
         try (Connection conn = Koneksi.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, nik);
+            ps.setString(1, email);
             ps.setString(2, password); // idealnya password di-hash dulu
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) return mapRow(rs);
@@ -143,6 +143,23 @@ public class UserDAO {
                 throw new SQLException("User ID " + id + " tidak ditemukan.");
         }
     }
+public List<User> getUserByRole(Role role) throws SQLException {
+    List<User> list = new ArrayList<>();
+    String sql = "SELECT id, nik, nama, email, password, alamat, "
+               + "no_telepon, role "
+               + "FROM users WHERE role = ? "
+               + "ORDER BY nama";
+
+    try (Connection conn = Koneksi.getConnection();
+         PreparedStatement ps = conn.prepareStatement(sql)) {
+
+        ps.setString(1, role.name()); // enum → String untuk disimpan ke DB
+        try (ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) list.add(mapRow(rs));
+        }
+    }
+    return list;
+}
 
     // ─── DELETE: Hapus user ───────────────────────────────────────────────────
     public void hapusUser(int id) throws SQLException {
