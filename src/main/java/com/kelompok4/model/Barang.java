@@ -8,6 +8,9 @@ public abstract class Barang {
     private int kategoriId;
     private int stokSaatIni; 
     private int stokMinimum;
+    
+    protected Barang() {
+    }
 
     public Barang(int id, String kodeBarang, String namaBarang, String satuan, int kategoriId, int stokSaatIni, int stokMinimum) {
         this.id = id;
