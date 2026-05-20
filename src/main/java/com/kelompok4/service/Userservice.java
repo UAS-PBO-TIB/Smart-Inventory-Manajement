@@ -5,6 +5,7 @@
 package com.kelompok4.service;
 
 import com.kelompok4.model.*;
+import com.kelompok4.database.Koneksi;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author n03ll
  */
 public class Userservice {
-    private final Connection conn;
+    Connection conn = Koneksi.getConnection();
  
     public Userservice(Connection conn) {
         this.conn = conn;
