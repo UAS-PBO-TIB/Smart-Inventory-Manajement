@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KategoriDAO {
-
-    // ─── Helper: mapping ResultSet → Kategori ────────────────────────────────
     private Kategori mapRow(ResultSet rs) throws SQLException {
         return new Kategori(
             rs.getInt("id"),
@@ -19,7 +17,6 @@ public class KategoriDAO {
         );
     }
 
-    // ─── READ: Ambil semua kategori (dropdown & filter) ───────────────────────
     public List<Kategori> getAllKategori() throws SQLException {
         List<Kategori> list = new ArrayList<>();
         String sql = "SELECT id, nama_kategori, deskripsi "
@@ -36,7 +33,6 @@ public class KategoriDAO {
         return list;
     }
 
-    // ─── READ: Ambil satu kategori berdasarkan ID ─────────────────────────────
     public Kategori getKategoriById(int id) throws SQLException {
         String sql = "SELECT id, nama_kategori, deskripsi "
                    + "FROM kategori WHERE id = ?";
@@ -52,7 +48,6 @@ public class KategoriDAO {
         return null;
     }
 
-    // ─── INSERT: Tambah kategori baru, return objek baru ─────────────────────
     public Kategori tambahKategori(String namaKategori, String deskripsi)
             throws SQLException {
 
@@ -73,7 +68,6 @@ public class KategoriDAO {
         throw new SQLException("Gagal menambah kategori: generated key tidak ditemukan.");
     }
 
-    // ─── UPDATE: Edit kategori, return objek terupdate ───────────────────────
     public Kategori editKategori(int id, String namaKategori, String deskripsi)
             throws SQLException {
 
@@ -92,7 +86,6 @@ public class KategoriDAO {
         return getKategoriById(id);
     }
 
-    // ─── DELETE: Hapus kategori ───────────────────────────────────────────────
     public void hapusKategori(int id) throws SQLException {
         String sql = "DELETE FROM kategori WHERE id = ?";
 

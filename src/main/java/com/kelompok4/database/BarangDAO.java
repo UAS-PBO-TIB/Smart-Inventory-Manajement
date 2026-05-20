@@ -9,9 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BarangDAO {
-
-    // ─── Concrete inner class karena Barang adalah abstract ───────────────────
-    // Tidak perlu buat file baru, cukup di sini saja
     public static class BarangData extends Barang {
         private String namaKategori;
 
@@ -26,7 +23,6 @@ public class BarangDAO {
         public void setNamaKategori(String namaKategori) { this.namaKategori = namaKategori; }
     }
 
-    // ─── Helper: mapping ResultSet → BarangData ───────────────────────────────
     private BarangData mapRow(ResultSet rs) throws SQLException {
         return new BarangData(
             rs.getInt("id"),
@@ -40,7 +36,6 @@ public class BarangDAO {
         );
     }
 
-    // ─── READ: Ambil semua barang ──────────────────────────────────────────────
     public List<Barang> getAllBarang() throws SQLException {
         List<Barang> list = new ArrayList<>();
         String sql = "SELECT b.id, b.kode_barang, b.nama_barang, b.satuan, "
@@ -60,7 +55,6 @@ public class BarangDAO {
         return list;
     }
 
-    // ─── READ: Ambil satu barang berdasarkan ID ────────────────────────────────
     public Barang getBarangById(int id) throws SQLException {
         String sql = "SELECT b.id, b.kode_barang, b.nama_barang, b.satuan, "
                    + "b.stok_saat_ini, b.stok_minimum, b.kategori_id, k.nama_kategori "
@@ -79,7 +73,6 @@ public class BarangDAO {
         return null;
     }
 
-    // ─── SEARCH: Cari barang berdasarkan nama ─────────────────────────────────
     public List<Barang> cariBarangByNama(String keyword) throws SQLException {
         List<Barang> list = new ArrayList<>();
         String sql = "SELECT b.id, b.kode_barang, b.nama_barang, b.satuan, "
@@ -99,7 +92,6 @@ public class BarangDAO {
         return list;
     }
 
-    // ─── FILTER: Filter barang berdasarkan kategori ───────────────────────────
     public List<Barang> getBarangByKategori(int kategoriId) throws SQLException {
         List<Barang> list = new ArrayList<>();
         String sql = "SELECT b.id, b.kode_barang, b.nama_barang, b.satuan, "
@@ -119,7 +111,6 @@ public class BarangDAO {
         return list;
     }
 
-    // ─── ALERT: Ambil barang stok kritis ─────────────────────────────────────
     public List<Barang> getBarangStokKritis() throws SQLException {
         List<Barang> list = new ArrayList<>();
         String sql = "SELECT b.id, b.kode_barang, b.nama_barang, b.satuan, "
@@ -137,7 +128,6 @@ public class BarangDAO {
         return list;
     }
 
-    // ─── INSERT: Tambah barang baru, return objek baru ────────────────────────
     public Barang tambahBarang(String kodeBarang, String namaBarang, String satuan,
                                int stokAwal, int stokMinimum, int kategoriId)
             throws SQLException {
@@ -165,7 +155,6 @@ public class BarangDAO {
         throw new SQLException("Gagal menambah barang: generated key tidak ditemukan.");
     }
 
-    // ─── UPDATE: Edit data barang, return objek terupdate ─────────────────────
     public Barang editBarang(int id, String namaBarang, String satuan,
                              int stokMinimum, int kategoriId) throws SQLException {
 
@@ -187,7 +176,6 @@ public class BarangDAO {
         return getBarangById(id);
     }
 
-    // ─── UPDATE: Update stok setelah transaksi ────────────────────────────────
     public Barang updateStok(int barangId, int stokBaru) throws SQLException {
         String sql = "UPDATE barang SET stok_saat_ini = ? WHERE id = ?";
 
@@ -203,7 +191,6 @@ public class BarangDAO {
         return getBarangById(barangId);
     }
 
-    // ─── DELETE: Hapus barang ─────────────────────────────────────────────────
     public void hapusBarang(int id) throws SQLException {
         String sql = "DELETE FROM barang WHERE id = ?";
 

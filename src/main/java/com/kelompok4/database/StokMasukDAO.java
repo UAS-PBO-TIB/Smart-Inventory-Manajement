@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StokMasukDAO {
-
-    // ─── Helper: mapping ResultSet → StokMasuk ────────────────────────────────
     private StokMasuk mapRow(ResultSet rs) throws SQLException {
         return new StokMasuk(
             rs.getInt("id"),
@@ -24,7 +22,6 @@ public class StokMasukDAO {
         );
     }
 
-    // ─── INSERT: Catat transaksi masuk, return objek baru ─────────────────────
     public StokMasuk tambahStokMasuk(String nomorTransaksi, int barangId,
                                      int supplierId, int dicatatOleh, int jumlah,
                                      BigDecimal hargaSatuan, Date tanggalMasuk,
@@ -59,7 +56,6 @@ public class StokMasukDAO {
         throw new SQLException("Gagal mencatat stok masuk: generated key tidak ditemukan.");
     }
 
-    // ─── READ: Ambil satu transaksi berdasarkan ID ────────────────────────────
     public StokMasuk getStokMasukById(int id) throws SQLException {
         String sql = "SELECT id, nomor_transaksi, barang_id, supplier_id, "
                    + "dicatat_oleh, jumlah, harga_satuan, total_harga, "
@@ -77,7 +73,6 @@ public class StokMasukDAO {
         return null;
     }
 
-    // ─── READ: Ambil semua riwayat stok masuk — untuk laporan ────────────────
     public List<StokMasuk> getAllStokMasuk() throws SQLException {
         List<StokMasuk> list = new ArrayList<>();
         String sql = "SELECT sm.id, sm.nomor_transaksi, sm.barang_id, sm.supplier_id, "
@@ -97,7 +92,6 @@ public class StokMasukDAO {
         return list;
     }
 
-    // ─── READ: Filter berdasarkan barang ─────────────────────────────────────
     public List<StokMasuk> getStokMasukByBarang(int barangId) throws SQLException {
         List<StokMasuk> list = new ArrayList<>();
         String sql = "SELECT id, nomor_transaksi, barang_id, supplier_id, "
@@ -117,7 +111,6 @@ public class StokMasukDAO {
         return list;
     }
 
-    // ─── READ: Filter berdasarkan supplier ───────────────────────────────────
     public List<StokMasuk> getStokMasukBySupplier(int supplierId) throws SQLException {
         List<StokMasuk> list = new ArrayList<>();
         String sql = "SELECT id, nomor_transaksi, barang_id, supplier_id, "
@@ -137,7 +130,6 @@ public class StokMasukDAO {
         return list;
     }
 
-    // ─── READ: Filter berdasarkan rentang tanggal ─────────────────────────────
     public List<StokMasuk> getStokMasukByTanggal(Date dari, Date sampai)
             throws SQLException {
 

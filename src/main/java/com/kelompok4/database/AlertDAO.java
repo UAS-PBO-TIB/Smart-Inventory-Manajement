@@ -9,8 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AlertDAO {
-
-    // ─── Helper: mapping ResultSet → AlertStokKritis ───────────────────────────
     private AlertStokKritis mapRow(ResultSet rs) throws SQLException {
         return new AlertStokKritis(
             rs.getInt("id"),
@@ -25,7 +23,6 @@ public class AlertDAO {
         );
     }
 
-    // ─── Ambil semua alert AKTIF ────────────────────────────────────────────────
     public List<AlertStokKritis> getAlertAktif() throws SQLException {
         List<AlertStokKritis> list = new ArrayList<>();
 
@@ -48,7 +45,6 @@ public class AlertDAO {
         return list;
     }
 
-    // ─── Ambil alert by ID ──────────────────────────────────────────────────────
     public AlertStokKritis getAlertById(int alertId) throws SQLException {
         String sql = "SELECT id, barang_id, stok_saat_alert, stok_minimum, "
                    + "status_alert, tanggal_alert, ditangani_oleh, "
@@ -65,10 +61,9 @@ public class AlertDAO {
                 }
             }
         }
-        return null; // tidak ditemukan
+        return null; 
     }
 
-    // ─── Buat alert baru, return objek yang baru dibuat ────────────────────────
     public AlertStokKritis buatAlert(int barangId, int stokSaatIni, int stokMinimum)
             throws SQLException {
 
@@ -85,7 +80,6 @@ public class AlertDAO {
             ps.setInt(3, stokMinimum);
             ps.executeUpdate();
 
-            // Ambil ID yang baru di-generate, lalu fetch objek lengkapnya
             try (ResultSet keys = ps.getGeneratedKeys()) {
                 if (keys.next()) {
                     int newId = keys.getInt(1);
@@ -96,7 +90,6 @@ public class AlertDAO {
         throw new SQLException("Gagal membuat alert: generated key tidak ditemukan.");
     }
 
-    // ─── Tandai alert sudah ditangani, return objek terupdate ──────────────────
     public AlertStokKritis tandaiDitangani(int alertId, int ditanganiOleh)
             throws SQLException {
 
@@ -117,7 +110,7 @@ public class AlertDAO {
                 throw new SQLException("Alert ID " + alertId + " tidak ditemukan.");
             }
         }
-        // Return objek dengan data terbaru dari DB
+        
         return getAlertById(alertId);
     }
 }

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StokKeluarDAO {
-
-    // ─── Helper: mapping ResultSet → StokKeluar ───────────────────────────────
     private StokKeluar mapRow(ResultSet rs) throws SQLException {
         return new StokKeluar(
             rs.getInt("id"),
@@ -22,7 +20,6 @@ public class StokKeluarDAO {
         );
     }
 
-    // ─── INSERT: Catat transaksi keluar, return objek baru ────────────────────
     public StokKeluar tambahStokKeluar(String nomorTransaksi, int barangId,
                                        int departemenId, int dicatatOleh, int jumlah,
                                        Date tanggalKeluar, String keperluan, String catatan)
@@ -54,7 +51,6 @@ public class StokKeluarDAO {
         throw new SQLException("Gagal mencatat stok keluar: generated key tidak ditemukan.");
     }
 
-    // ─── READ: Ambil satu transaksi berdasarkan ID ────────────────────────────
     public StokKeluar getStokKeluarById(int id) throws SQLException {
         String sql = "SELECT id, nomor_transaksi, barang_id, departemen_id, "
                    + "dicatat_oleh, jumlah, tanggal_keluar, keperluan, catatan "
@@ -71,7 +67,6 @@ public class StokKeluarDAO {
         return null;
     }
 
-    // ─── READ: Ambil semua riwayat stok keluar — untuk laporan ───────────────
     public List<StokKeluar> getAllStokKeluar() throws SQLException {
         List<StokKeluar> list = new ArrayList<>();
         String sql = "SELECT sk.id, sk.nomor_transaksi, sk.barang_id, sk.departemen_id, "
@@ -91,7 +86,6 @@ public class StokKeluarDAO {
         return list;
     }
 
-    // ─── READ: Filter transaksi berdasarkan barang ────────────────────────────
     public List<StokKeluar> getStokKeluarByBarang(int barangId) throws SQLException {
         List<StokKeluar> list = new ArrayList<>();
         String sql = "SELECT id, nomor_transaksi, barang_id, departemen_id, "
@@ -110,7 +104,6 @@ public class StokKeluarDAO {
         return list;
     }
 
-    // ─── READ: Filter transaksi berdasarkan rentang tanggal ──────────────────
     public List<StokKeluar> getStokKeluarByTanggal(Date dari, Date sampai)
             throws SQLException {
 

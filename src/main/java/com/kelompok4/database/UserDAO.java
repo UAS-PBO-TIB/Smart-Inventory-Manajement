@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
-
-    // ─── Helper: mapping ResultSet → User ────────────────────────────────────
     private User mapRow(ResultSet rs) throws SQLException {
         return new User(
             rs.getInt("id"),
@@ -25,7 +23,6 @@ public class UserDAO {
         );
     }
 
-    // ─── LOGIN: cek NIK dan password, return User atau null ──────────────────
     public User login(String email, String password) throws SQLException {
         String sql = "SELECT id, nik, nama, email, password, alamat, "
                    + "no_telepon, role "
@@ -44,7 +41,6 @@ public class UserDAO {
         return null; // null = login gagal
     }
 
-    // ─── READ: Ambil user berdasarkan ID ──────────────────────────────────────
     public User getUserById(int id) throws SQLException {
         String sql = "SELECT id, nik, nama, email, password, alamat, "
                    + "no_telepon, role "
@@ -61,7 +57,6 @@ public class UserDAO {
         return null;
     }
 
-    // ─── READ: Ambil semua user — untuk halaman manajemen user ───────────────
     public List<User> getAllUser() throws SQLException {
         List<User> list = new ArrayList<>();
         String sql = "SELECT id, nik, nama, email, password, alamat, "
@@ -77,7 +72,6 @@ public class UserDAO {
         return list;
     }
 
-    // ─── INSERT: Tambah user baru, return objek baru ──────────────────────────
     public User tambahUser(String nik, String nama, String email,
                            String password, String alamat,
                            String noTelepon, Role role) throws SQLException {
@@ -105,7 +99,6 @@ public class UserDAO {
         throw new SQLException("Gagal menambah user: generated key tidak ditemukan.");
     }
 
-    // ─── UPDATE: Edit data user, return objek terupdate ──────────────────────
     public User editUser(int id, String nama, String email,
                          String alamat, String noTelepon, Role role)
             throws SQLException {
@@ -129,7 +122,6 @@ public class UserDAO {
         return getUserById(id);
     }
 
-    // ─── UPDATE: Ganti password saja ─────────────────────────────────────────
     public void gantiPassword(int id, String passwordBaru) throws SQLException {
         String sql = "UPDATE users SET password = ? WHERE id = ?";
 
@@ -161,7 +153,6 @@ public List<User> getUserByRole(Role role) throws SQLException {
     return list;
 }
 
-    // ─── DELETE: Hapus user ───────────────────────────────────────────────────
     public void hapusUser(int id) throws SQLException {
         String sql = "DELETE FROM users WHERE id = ?";
 
