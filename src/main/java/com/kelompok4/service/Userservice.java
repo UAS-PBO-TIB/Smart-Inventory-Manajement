@@ -17,7 +17,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class Userservice {
     private final Connection conn;
  
-    public UserService(Connection conn) {
+    public Userservice(Connection conn) {
         this.conn = conn;
     }
     
