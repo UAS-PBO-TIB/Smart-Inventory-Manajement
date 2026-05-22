@@ -8,6 +8,8 @@ package com.kelompok4.service;
  *
  * @author n03ll
  */
-public class Barangservice {
-    
+public class ServiceException {
+    public ServiceException(String message) {
+        super(message);
+    }
 }

@@ -19,7 +19,7 @@ public class Koneksi {
     // Konstruktor private biar tidak bisa di-new dari luar
     private Koneksi() {}
 
-    public static Connection getConnection() throws SQLException {
+    public static synchronized Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             try {
                 Class.forName("org.postgresql.Driver");
