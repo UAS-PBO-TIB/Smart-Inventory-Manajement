@@ -8,7 +8,7 @@ package com.kelompok4.service;
  *
  * @author n03ll
  */
-public class ServiceException {
+public class ServiceException extends RuntimeException {
     public ServiceException(String message) {
         super(message);
     }
