@@ -12,7 +12,7 @@ package com.kelompok4.service;
 import java.sql.SQLException;
 import java.util.List;
 import com.kelompok4.database.UserDAO;
-import com.kelompok4.service.ServiceException;
+import com.kelompok4.model.*;
 
 public class UserService {
     private final UserDAO userDAO;

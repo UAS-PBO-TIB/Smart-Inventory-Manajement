@@ -13,6 +13,7 @@ package com.kelompok4.service;
 import java.sql.SQLException;
 import java.util.List;
 import com.kelompok4.database.KategoriDAO;
+import com.kelompok4.model.Kategori;
 
 public class KategoriService {
     private final KategoriDAO kategoriDAO;

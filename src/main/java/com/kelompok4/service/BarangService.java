@@ -13,6 +13,7 @@ package com.kelompok4.service;
 import java.sql.SQLException;
 import java.util.List;
 import com.kelompok4.database.BarangDAO;
+import com.kelompok4.model.Barang;
 
 public class BarangService {
     private final BarangDAO barangDAO;
