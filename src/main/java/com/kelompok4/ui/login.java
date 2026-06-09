@@ -41,6 +41,7 @@ public class login extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1080, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel1.setText("Login Page Smart Inventory");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 

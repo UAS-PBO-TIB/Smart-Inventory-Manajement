@@ -199,7 +199,7 @@ public class staff_dashboard extends javax.swing.JFrame {
                 .addComponent(jLabelKeteranganBarang)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTotalBarang)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         jPanelKartuAlert.setBackground(new java.awt.Color(231, 76, 60));
@@ -232,7 +232,7 @@ public class staff_dashboard extends javax.swing.JFrame {
                 .addComponent(jLabelKeteranganAlert)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelTotalAlert)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         jLabelDaftarBarang.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
