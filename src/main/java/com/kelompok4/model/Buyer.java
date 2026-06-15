@@ -1,14 +1,14 @@
 package com.kelompok4.model;
 
-public class Supplier {
+public class Buyer {
     private int id;
     private String nama;
     private String kontak;
     private String alamat;
 
-    public Supplier() {}
+    public Buyer() {}
 
-    public Supplier(int id, String nama, String kontak, String alamat) {
+    public Buyer(int id, String nama, String kontak, String alamat) {
         this.id = id;
         this.nama = nama;
         this.kontak = kontak;
