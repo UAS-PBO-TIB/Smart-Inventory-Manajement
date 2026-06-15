@@ -143,10 +143,10 @@ Smart-Inventory-Manajement/
 7. **Login dengan akun dummy yang tersimpan, ex:**
 
    | Role    | Email               | Password |
-|---------|---------------------|----------|
-| Admin   | admin@example.com   | 123456   |
-| Manager | manager@example.com | 123456   |
-| Staff   | staff@example.com   | 123456   |
+   |---------|---------------------|----------|
+   | Admin   | admin@example.com   | 123456   |
+   | Manager | manager@example.com | 123456   |
+   | Staff   | staff@example.com   | 123456   |
 
 ---
 
