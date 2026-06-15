@@ -152,13 +152,13 @@ Smart-Inventory-Manajement/
 
 **Role: Admin**
 
-3. Dashboard Admin
+2. Dashboard Admin
    <img width="1274" height="719" alt="image" src="https://github.com/user-attachments/assets/ace385ab-0897-4aa0-9246-402a9e57d622" />
-4. Manage Users
+3. Manage Users
    <img width="1280" height="716" alt="image" src="https://github.com/user-attachments/assets/ffe08147-7efb-41f3-b11d-efd3efe4fafd" />
-5. Manage Suppliers
+4. Manage Suppliers
    <img width="1279" height="719" alt="image" src="https://github.com/user-attachments/assets/ec43a63b-7a0d-44fa-a4e8-c6fbf8930e52" />
-6. Manage Buyers
+5. Manage Buyers
    <img width="1279" height="720" alt="image" src="https://github.com/user-attachments/assets/662cf0cb-0baf-461e-a84a-a7309b6f20ee" />
 
 **Role: Manager**
