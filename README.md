@@ -141,11 +141,13 @@ Smart-Inventory-Manajement/
    java -cp "out;lib/*" com.kelompok4.view.LoginDialog
    ```
 7. **Login dengan akun dummy yang tersimpan, ex:**
-   | Role         | Email                     | Password |
-   |--------------|---------------------------| 123456 |
-   | Admin        | admin@example.com         | 123456 |
-   | Manager      | manager@example.com       | 123456 |
-   | Staff        | staff@example.com         | 123456 |
+   | Role    | Email               | Password |
+|---------|---------------------|----------|
+| Admin   | admin@example.com   | 123456   |
+| Manager | manager@example.com | 123456   |
+| Staff   | staff@example.com   | 123456   |
+
+---
 
 ## Screenshot
 1. Login
