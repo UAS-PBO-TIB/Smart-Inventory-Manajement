@@ -98,6 +98,7 @@ Smart-Inventory-Manajement/
 │   │                       ├── ManageSuppliersPanel.java
 │   │                       └── ManageUsersPanel.java
 ```
+---
 
 ## 🚀 Cara Menjalankan
 
@@ -139,11 +140,12 @@ Smart-Inventory-Manajement/
    javac -cp "lib/*" -d out src/com/kelompok4/**/*.java
    java -cp "out;lib/*" com.kelompok4.view.LoginDialog
    ```
-7. **Login dengan akun dummy**
-   Role	Email	Password
-   Admin	admin@example.com	123456
-   Manager	manager@example.com	123456
-   Staff	staff@example.com	123456
+7. **Login dengan akun dummy yang tersimpan, ex:**
+   | Role         | Email                     | Password |
+   |--------------|---------------------------| 123456 |
+   | Admin        | admin@example.com         | 123456 |
+   | Manager      | manager@example.com       | 123456 |
+   | Staff        | staff@example.com         | 123456 |
 
 ## Screenshot
 1. Login
