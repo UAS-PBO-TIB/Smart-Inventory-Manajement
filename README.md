@@ -3,7 +3,6 @@
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=java)
 ![Swing](https://img.shields.io/badge/GUI-Swing-orange)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-336791?logo=postgresql)
-![License](https://img.shields.io/badge/License-MIT-green)
 
 > Aplikasi desktop manajemen inventaris berbasis **Java Swing** dengan arsitektur **MVC**, **DAO Pattern**, dan database **PostgreSQL**. Mendukung multi‑role (Admin, Manager, Staff), pencatatan stok masuk/keluar, alert stok kritis, serta laporan PDF.
 
@@ -51,18 +50,52 @@
 ---
 
 ## Struktur Proyek
-SmartInventory/
-├── src/
-│ └── com/kelompok4/
-│ ├── database/ # DBConnection.java (koneksi PostgreSQL)
-│ ├── model/ # User, Barang, Elektronik, ATK, Supplier, Buyer, StokTransaction
-│ ├── dao/ # UserDAO, BarangDAO, SupplierDAO, BuyerDAO, StokTransactionDAO
-│ ├── controller/ # AuthController, UserController, BarangController, dll.
-│ └── view/ # MainFrame, LoginDialog, dan panel‑panel (Dashboard, Manage, Input)
-│ └── panels/ # Semua panel untuk setiap role
-├── lib/ # driver JDBC PostgreSQL, openpdf.jar
-├── database_setup.sql # Skema database + data dummy
+Smart-Inventory-Manajement/
+├── pom.xml
 ├── README.md
+├── src
+│   ├── main
+│   │   └── java
+│   │       └── com
+│   │           └── kelompok4
+│   │               ├── App.java
+│   │               ├── controller
+│   │               │   ├── AuthController.java
+│   │               │   ├── BarangController.java
+│   │               │   ├── BuyerController.java
+│   │               │   ├── StokController.java
+│   │               │   ├── SupplierController.java
+│   │               │   └── UserController.java
+│   │               ├── dao
+│   │               │   ├── BarangDAO.java
+│   │               │   ├── BuyerDAO.java
+│   │               │   ├── StokTransactionDAO.java
+│   │               │   ├── SupplierDAO.java
+│   │               │   └── UserDAO.java
+│   │               ├── database
+│   │               │   └── DBConnection.java
+│   │               ├── model
+│   │               │   ├── ATK.java
+│   │               │   ├── Barang.java
+│   │               │   ├── Buyer.java
+│   │               │   ├── Elektronik.java
+│   │               │   ├── StokTransaction.java
+│   │               │   ├── Supplier.java
+│   │               │   └── User.java
+│   │               └── view
+│   │                   ├── LoginDialog.java
+│   │                   ├── MainFrame.java
+│   │                   └── panels
+│   │                       ├── DashboardAdminPanel.java
+│   │                       ├── DashboardManagerPanel.java
+│   │                       ├── DashboardStaffPanel.java
+│   │                       ├── InputStokKeluarPanel.java
+│   │                       ├── InputStokMasukPanel.java
+│   │                       ├── LaporanBarangPanel.java
+│   │                       ├── ManageBarangPanel.java
+│   │                       ├── ManageBuyersPanel.java
+│   │                       ├── ManageSuppliersPanel.java
+│   │                       └── ManageUsersPanel.java
 
 
 ---
@@ -145,5 +178,3 @@ SmartInventory/
 ## Ucapan Terima Kasih
 Dosen pembimbing mata kuliah Pemrograman Berorientasi Objek yaitu Pak Fikri.
 Semua anggota kelompok 4 yang telah berkontribusi.
-
-``` <div align="center"> Dibuat dengan ❤️ oleh Kelompok 4 </div> ```
