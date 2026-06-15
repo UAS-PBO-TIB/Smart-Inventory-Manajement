@@ -50,6 +50,7 @@
 ---
 
 ## Struktur Proyek
+```
 Smart-Inventory-Manajement/
 ├── pom.xml
 ├── README.md
@@ -96,9 +97,7 @@ Smart-Inventory-Manajement/
 │   │                       ├── ManageBuyersPanel.java
 │   │                       ├── ManageSuppliersPanel.java
 │   │                       └── ManageUsersPanel.java
-
-
----
+```
 
 ## 🚀 Cara Menjalankan
 
@@ -150,22 +149,25 @@ Smart-Inventory-Manajement/
 1. Login
    <img width="399" height="251" alt="image" src="https://github.com/user-attachments/assets/8522fe54-7a2d-4fba-87b5-19cb1b580d5a" />
 **Role: Admin**
-2. Dashboard Admin
+
+3. Dashboard Admin
    <img width="1274" height="719" alt="image" src="https://github.com/user-attachments/assets/ace385ab-0897-4aa0-9246-402a9e57d622" />
-3. Manage Users
+4. Manage Users
    <img width="1280" height="716" alt="image" src="https://github.com/user-attachments/assets/ffe08147-7efb-41f3-b11d-efd3efe4fafd" />
-4. Manage Suppliers
+5. Manage Suppliers
    <img width="1279" height="719" alt="image" src="https://github.com/user-attachments/assets/ec43a63b-7a0d-44fa-a4e8-c6fbf8930e52" />
-5. Manage Buyers
+6. Manage Buyers
    <img width="1279" height="720" alt="image" src="https://github.com/user-attachments/assets/662cf0cb-0baf-461e-a84a-a7309b6f20ee" />
 
 **Role: Manager**
+
 6. Dashboard Manager
    <img width="1278" height="722" alt="image" src="https://github.com/user-attachments/assets/80de1e35-5955-412f-812e-d34cdd649bbe" />
 7. Laporan Barang
    <img width="1282" height="720" alt="image" src="https://github.com/user-attachments/assets/002a3998-4826-47c9-b7d3-960372deae6f" />
 
 **Role: Staff**
+
 8. Dashboard Staff
    <img width="1280" height="717" alt="image" src="https://github.com/user-attachments/assets/51836818-a502-429b-a2ac-43cc96e821b4" />
 9. Manage Barang
