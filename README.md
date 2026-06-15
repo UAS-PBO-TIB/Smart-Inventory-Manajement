@@ -148,6 +148,7 @@ Smart-Inventory-Manajement/
 ## Screenshot
 1. Login
    <img width="399" height="251" alt="image" src="https://github.com/user-attachments/assets/8522fe54-7a2d-4fba-87b5-19cb1b580d5a" />
+
 **Role: Admin**
 
 3. Dashboard Admin
